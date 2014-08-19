@@ -11,17 +11,27 @@
 
 			var character;
 			var mario;
+			var cursorU, cursorD, cursorL, cursorR;
 
 			var cursors;
 
 			function preload() {
 				game.load.image('mario', 'assets/mario.png');
+				game.load.image('cursor_u', 'assets/cursor_u.png');
+				game.load.image('cursor_d', 'assets/cursor_d.png');
+				game.load.image('cursor_l', 'assets/cursor_l.png');
+				game.load.image('cursor_r', 'assets/cursor_r.png');
 			}
 
 			function create() {
 				character = new Phaser.Rectangle(380, 280, 40, 40);
 				mario = game.add.sprite(100, 100, 'mario');
 				mario.anchor.setTo(0.5, 0.5);
+
+				cursorU = game.add.sprite(600, 300, 'cursor_u');
+				cursorD = game.add.sprite(500, 400, 'cursor_d');
+				cursorL = game.add.sprite(700, 400, 'cursor_l');
+				cursorR = game.add.sprite(600, 500, 'cursor_r');
 
 				cursors = game.input.keyboard.createCursorKeys();
 			}
