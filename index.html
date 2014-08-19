@@ -27,10 +27,16 @@
 				mario = game.add.sprite(300, 200, 'mario');
 				mario.anchor.setTo(0.5, 0.5);
 
-				cursorU = game.add.sprite(600, 300, 'cursor_u');
+				// cursorU = game.add.sprite(600, 300, 'cursor_u');
+				cursorU = game.add.button(600, 300, 'cursor_u', actionOnClick, this);
 				cursorD = game.add.sprite(600, 500, 'cursor_d');
 				cursorL = game.add.sprite(500, 400, 'cursor_l');
 				cursorR = game.add.sprite(700, 400, 'cursor_r');
+
+				cursorU.inputEnabled = true;
+				cursorD.inputEnabled = true;
+				cursorL.inputEnabled = true;
+				cursorR.inputEnabled = true;
 
 				cursors = game.input.keyboard.createCursorKeys();
 			}
